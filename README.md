@@ -1,5 +1,5 @@
 
-# Distributed Swarm Robotics Framework (Multi-Agent\_Swarm) 🤖 swarm
+# Distributed Swarm Robotics Framework 
 
 This project is a Python framework designed to simulate the behavior of distributed multi-agent systems, focusing on **swarm robotics** and **collective behaviors** like flocking. It uses asynchronous programming (`asyncio`) and UDP network communication to model autonomous agents interacting within a shared virtual environment.
 
@@ -98,4 +98,5 @@ Contributions are welcome\! If you find a bug or have an idea for a new feature 
 
 1.  Ensure you have activated your virtual environment.
 2.  Run the tests (if applicable) to confirm no existing functionality is broken.
+
 
