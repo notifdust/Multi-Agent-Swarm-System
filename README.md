@@ -1,8 +1,3 @@
-That's a great idea\! A comprehensive `README.md` is essential for any project. It serves as the front page and the primary documentation for anyone—including your future self—who wants to use or contribute to the code.
-
-Here is a well-structured `README.md` file for your **Distributed Swarm Robotics Framework**.
-
------
 
 # Distributed Swarm Robotics Framework (Multi-Agent\_Swarm) 🤖 swarm
 
@@ -103,3 +98,4 @@ Contributions are welcome\! If you find a bug or have an idea for a new feature 
 
 1.  Ensure you have activated your virtual environment.
 2.  Run the tests (if applicable) to confirm no existing functionality is broken.
+
