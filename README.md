@@ -90,13 +90,10 @@ The simulation parameters are controlled entirely by the YAML file located at `c
 
 -----
 
-## Contributing
 
-Contributions are welcome\! If you find a bug or have an idea for a new feature (like a new behavior, a different communication topology, or a better visualization), please open an issue or submit a pull request.
-
-**Before submitting a pull request:**
 
 1.  Ensure you have activated your virtual environment.
 2.  Run the tests (if applicable) to confirm no existing functionality is broken.
+
 
 
