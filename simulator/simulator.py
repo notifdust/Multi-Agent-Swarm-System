@@ -36,31 +36,38 @@ class Simulator:
         asyncio.run(self._run())
 
     async def _run(self):
-        # start all agents
+    # start all agents
         tasks = [asyncio.create_task(a.start()) for a in self.agents]
         vis = Visualizer(self.agents, self.arena, self.cfg)
-        # start visualizer in executor so it doesn't block
+    
+        # Start visualizer in executor so it doesn't block
         loop = asyncio.get_event_loop()
-        vis_task = loop.run_in_executor(None, vis.animate, self.sim_dt, self.max_steps)
+        #  FIX: Keep a reference to the visualization task
+        vis_task = loop.run_in_executor(None, vis.animate, self.sim_dt, self.max_steps) 
 
         # main loop for logging
-        start = time.time()
+        #  FIX: The 'start' line is removed as it was unused.
         step = 0
         try:
             while step < self.max_steps:
                 # log positions
                 positions = [a.position.copy() for a in self.agents]
                 self.logger.log(step, positions)
-                await asyncio.sleep(self.sim_dt)
-                step += 1
+            await asyncio.sleep(self.sim_dt)
+            step += 1
         except KeyboardInterrupt:
             pass
         finally:
-            # stop agents
+        # stop agents
             for a in self.agents:
                 a.stop()
-            # cancel tasks
+        
+        # cancel agent tasks
             for t in tasks:
                 t.cancel()
-            # wait briefly
+            
+        # 💡 FIX: Cancel the visualization task as well.
+            vis_task.cancel() 
+        
+        # wait briefly
             await asyncio.sleep(0.1)

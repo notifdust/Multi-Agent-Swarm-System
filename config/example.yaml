@@ -1,0 +1,20 @@
+"""
+num_agents: 12
+arena_size: [20.0, 20.0]
+sim_dt: 0.05
+max_steps: 2000
+comm_port_base: 10000
+behavior:
+  type: reynolds
+  params:
+    separation_weight: 1.2
+    alignment_weight: 1.0
+    cohesion_weight: 0.8
+    neighbor_radius: 2.5
+controller:
+  max_speed: 1.2
+  max_accel: 1.0
+logging:
+  enabled: true
+  path: logs/run.log
+"""
