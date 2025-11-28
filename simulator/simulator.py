@@ -66,7 +66,7 @@ class Simulator:
             for t in tasks:
                 t.cancel()
             
-        # 💡 FIX: Cancel the visualization task as well.
+        # FIX: Cancel the visualization task as well.
             vis_task.cancel() 
         
         # wait briefly

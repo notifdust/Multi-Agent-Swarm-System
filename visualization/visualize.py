@@ -27,10 +27,14 @@ class Visualizer:
             self.scat.set_offsets([])
             return (self.scat,)
 
-        def update(frame):
+        # FIX 1: Renamed 'frame' to '_frame' because it's unused.
+        def update(_frame):
             positions = np.array([a.position for a in self.agents])
             self.scat.set_offsets(positions)
             return (self.scat,)
 
-        ani = animation.FuncAnimation(self.fig, update, frames=range(max_steps), init_func=init, interval=dt*1000, blit=True)
+        # FIX 2: Added a comment to silence the 'F841' (unused variable)
+        # warning for 'ani'. The assignment is required.
+        ani = animation.FuncAnimation(self.fig, update, frames=range(max_steps), init_func=init, interval=dt*1000, blit=True) # noqa: F841
+        
         plt.show()
